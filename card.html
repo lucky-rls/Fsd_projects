@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile Card with Toggle</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .card {
+      background: #fff;
+      padding: 30px 20px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 320px;
+      transition: height 0.3s ease;
+    }
+
+    .card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 3px solid #eee;
+    }
+
+    .card h2 {
+      font-size: 24px;
+      margin: 0;
+      color: #111;
+    }
+
+    .card h4 {
+      font-size: 16px;
+      color: gray;
+      margin: 5px 0 10px;
+    }
+
+    .card p {
+      font-size: 14px;
+      margin-bottom: 15px;
+      color: #444;
+    }
+
+    .card a.toggle-btn {
+      text-decoration: none;
+      display: inline-block;
+      padding: 8px 20px;
+      background-color: #28a745;
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .card a.toggle-btn:hover {
+      background-color: #218838;
+    }
+
+    .info {
+      font-size: 14px;
+      text-align: left;
+      line-height: 1.8;
+      margin-top: 15px;
+      padding-left: 10px;
+      color: #444;
+    }
+
+    .info span {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .more-info {
+      display: none;
+      margin-top: 10px;
+      text-align: left;
+      padding-left: 10px;
+    }
+
+    .more-info span {
+      display: block;
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <img src="lucky2.jpeg" alt="Profile Picture" />
+    <h2>Lucky</h2>
+    <h4>MACHINE LEARNING <br> ENGINEER</h4>
+    <p>luckykattumuri@gmail.com</p>
+    
+    <a class="toggle-btn" onclick="toggleInfo()">Show More</a>
+
+    
+      
+
+    <div class="more-info" id="moreInfo">
+      <h4 style="margin-top: 15px;">🎓 Education</h4>
+      <span>B.Tech in AIML – 3rd Year</span>
+      <span>📍S R K R Bhimavaram, Andhra Pradesh</span>
+
+
+      <h4>📂 Projects</h4>
+      <li>Responsive Restaurant Website using Web Development</li>
+      <li>Credit Card Fraud Detection System using ML</li>
+      <li>Garbage classification using ML</li>
+    
+    <h4> 💼 Skills:</h4>
+      <span>Java, c, python, Data Structures, FrontEnd Development</span>
+      <h4>🎯 Hobbies</h4>
+      <li>Exploring unique and interesting tech topics</li>
+      <li>Enjoy solving DSA problems</li>
+    </div>
+  </div>
+
+  <script>
+    function toggleInfo() {
+      const info = document.getElementById("moreInfo");
+      const btn = document.querySelector(".toggle-btn");
+      
+      if (info.style.display === "block") {
+        info.style.display = "none";
+        btn.textContent = "Show More";
+      } else {
+        info.style.display = "block";
+        btn.textContent = "Show Less";
+      }
+    }
+  </script>
+
+</body>
+</html>
